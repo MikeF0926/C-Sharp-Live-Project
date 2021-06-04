@@ -8,7 +8,7 @@ The website is still in its early stages and isn't fully available. I'll post co
 # Production Model
 
 ```
-[Key]
+        [Key]
         public int ProductionId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
