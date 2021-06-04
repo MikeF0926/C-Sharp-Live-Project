@@ -3,8 +3,34 @@
 # Introduction
 #### During this project, I worked with a team of other developers to create a dyanmic website using ASP .Net MVC and Entity Framework. While working on the code itself, I also gained experience utilizing the agile methodology for software development. We participated in daily stand-up meetings where we discussed the trials we were facing and what we were working on until the next meeting. We also had a code retrospective at the end of our 10 day sprint where we discussed our successes and areas in which we needed to improve. This project was intended to give us a live experienc of being part of a development team, and I feel that the experience gained during this two weeks will be invaluable in my career.
 The website is still in its early stages and isn't fully available. I'll post code snippets from my work below instead.
+
+# Style SignIn Page
+#### My first story I worked on was styling the SignIn index page, when new developers added their name to the website they would see this page. I used Bootstrap and css to help me style this portion.
+
+```
+Sign In Index Page:
+<div class="text-center names-container row"> 
+
+CSS:
+.names-container > p {
+    color: var(--light-color);    
+    text-overflow: ellipsis;    
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: large;
+    font-family: sans-serif;    
+    width: 200px;    
+    padding: 10px; 
+    margin: 10px;
+    border-radius: 30px;
+    background-color: var(--main-color);    
+}
+
+```
+![SignIn](https://user-images.githubusercontent.com/80483521/120860696-18448300-c554-11eb-8058-0c4fb01140cb.PNG)
+
 # Creating a Production class model.
-#### The first story I worked on was creating a entity model for a production class and also create to create the CRUD pages for that model.
+#### The second story I worked on was creating a entity model for a production class and also create to create the CRUD pages for that model.
 # Production Model
 
 ```
@@ -42,7 +68,7 @@ The website is still in its early stages and isn't fully available. I'll post co
 
 
 # Create card layout to Production
-#### My second story I had to create a card layout for the production model and also styled it.
+#### My third story I had to create a card layout for the production model and also styled it.
 
 ```
 @model IEnumerable<TheatreCMS3.Areas.Prod.Models.Production>
