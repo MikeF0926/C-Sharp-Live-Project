@@ -38,6 +38,9 @@ The website is still in its early stages and isn't fully available. I'll post co
         public bool IsCurrentlyShowing { get; set; }
 ```
 
+![Image of Production](https://user-images.githubusercontent.com/80483521/120859652-86884600-c552-11eb-9cb3-c4ac71cd115c.PNG)
+
+
 # Create card layout to Production
 #### My second story I had to create a card layout for the production model and also styled it.
 
@@ -106,6 +109,8 @@ css styling
     display: none;
 }
 ```
+![Image of Card](https://user-images.githubusercontent.com/80483521/120859852-cf3fff00-c552-11eb-9ea1-b57be2d833e6.PNG)
+
 # Add pagination and search bar
 #### My final story I had to add pagination and a search bar to the Production index page.
 
@@ -159,3 +164,4 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 </p>
 ```
+![Pagination&Search](https://user-images.githubusercontent.com/80483521/120859877-d535e000-c552-11eb-9506-7cdd4f0ac88d.PNG)
