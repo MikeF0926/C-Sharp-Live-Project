@@ -64,9 +64,6 @@ CSS:
         public bool IsCurrentlyShowing { get; set; }
 ```
 
-![Image of Production](https://user-images.githubusercontent.com/80483521/120859652-86884600-c552-11eb-9cb3-c4ac71cd115c.PNG)
-
-
 # Create card layout to Production
 #### My third story I had to create a card layout for the production model and also styled it.
 
@@ -138,7 +135,7 @@ css styling
 ![Image of Card](https://user-images.githubusercontent.com/80483521/120859852-cf3fff00-c552-11eb-9ea1-b57be2d833e6.PNG)
 
 # Add pagination and search bar
-#### My final story I had to add pagination and a search bar to the Production index page.
+#### My fourth story I had to add pagination and a search bar to the Production index page.
 
 ```
 Controller page:
@@ -191,3 +188,187 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
 </p>
 ```
 ![Pagination&Search](https://user-images.githubusercontent.com/80483521/120859877-d535e000-c552-11eb-9506-7cdd4f0ac88d.PNG)
+
+# Style the create and edit page
+#### My final story I had to create a form for my create and edit page of the production section. They wanted it to be a card format with the submit and cancel button to be at the bottom center of the form.
+
+```
+Create Page:
+<body>
+  <h4 class="text-center pro-header">Create Production</h4>
+  @using (Html.BeginForm())
+  {
+    @Html.AntiForgeryToken()
+    <div class="pro-container">
+      <div class="pro-inner form-horizontal">
+        <div>
+          <hr />
+          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+          <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = " Enter Title" } })
+              @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Enter Description" } })
+              @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.Playwright, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.Playwright, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Enter Playwright" } })
+              @Html.ValidationMessageFor(model => model.Playwright, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.Runtime, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.Runtime, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Enter Runtime" } })
+              @Html.ValidationMessageFor(model => model.Runtime, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.OpeningDay, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.OpeningDay, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Opening Day" } })
+              @Html.ValidationMessageFor(model => model.OpeningDay, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.ClosingDay, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.ClosingDay, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Closing Day" } })
+              @Html.ValidationMessageFor(model => model.ClosingDay, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.ShowTimeEve, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.ShowTimeEve, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Evening Show Time" } })
+              @Html.ValidationMessageFor(model => model.ShowTimeEve, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.ShowTimeMat, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.ShowTimeMat, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Matinee Show Time" } })
+              @Html.ValidationMessageFor(model => model.ShowTimeMat, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.Season, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.Season, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Season" } })
+              @Html.ValidationMessageFor(model => model.Season, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.IsWorldPremiere, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              <div class="checkbox">
+                @Html.EditorFor(model => model.IsWorldPremiere)
+                @Html.ValidationMessageFor(model => model.IsWorldPremiere, "", new { @class = "text-danger" })
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.TicketLink, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              @Html.EditorFor(model => model.TicketLink, new { htmlAttributes = new { @class = "form-control pro-high", placeholder = "Ticket Link" } })
+              @Html.ValidationMessageFor(model => model.TicketLink, "", new { @class = "text-danger" })
+            </div>
+          </div>
+
+          <div class="form-group">
+            @Html.LabelFor(model => model.IsCurrentlyShowing, htmlAttributes: new { @class = "control-label col-md-2 cms-text-dark" })
+            <div class="col-md-10 pro-input">
+              <div class="checkbox">
+                @Html.EditorFor(model => model.IsCurrentlyShowing)
+                @Html.ValidationMessageFor(model => model.IsCurrentlyShowing, "", new { @class = "text-danger" })
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-center">
+              <div>
+                <input type="submit" value="Submit" class="pro-create btn" />
+                @Html.ActionLink("Cancel", "Index", null, new { @class = "btn back-btn" })
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</body>
+```
+```
+CSS:
+/*Outter Form*/
+.pro-container {
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    width: 60%;
+    background-color: var(--main-color);
+}
+
+/*Inner Form*/
+.pro-inner {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--light-color);
+}
+
+/*Submit Button*/
+.pro-create {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    border-radius: 30px;   
+    
+}
+
+/*Cancel button*/
+.back-btn {
+    background-color: var(--main-color--light);
+    font-weight: bold;
+    border-radius: 30px;  
+    
+}
+
+.pro-create:hover {    
+    background-color: var(--secondary-color--dark);
+}
+
+
+.back-btn:hover {
+    background-color: var(--main-color);
+}
+
+/*Production highlight*/
+.pro-high {
+    background-color: var(--secondary-color--dark); 
+}
+
+.pro-high:focus {
+    border: 3px solid var(--main-color);
+}
+```
+![Create and Edit Style](https://user-images.githubusercontent.com/80483521/120878366-efd77b80-c589-11eb-9433-22378cb51866.PNG)
