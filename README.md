@@ -1,7 +1,7 @@
 # CSharp-LiveProject
 #### The Tech Academy C# Live Project
 # Introduction
-#### During this project, I worked with a team of other developers to create a dyanmic website using ASP .Net MVC and Entity Framework. While working on the code itself, I also gained experience utilizing the agile methodology for software development. We participated in daily stand-up meetings where we discussed the trials we were facing and what we were working on until the next meeting. We also had a code retrospective at the end of our 10 day sprint where we discussed our successes and areas in which we needed to improve. This project was intended to give us a live experienc of being part of a development team, and I feel that the experience gained during this two weeks will be invaluable in my career.
+#### During this project, I worked with a team of other developers to create a dyanmic website using ASP.Net, MVC, and Entity Framework. While working on the code itself, I also gained experience utilizing the agile methodology for software development. We participated in daily stand-up meetings where we discussed the trials we were facing and what we were working on until the next meeting. We also had a code retrospective at the end of our 10 day sprint where we discussed our successes and areas in which we needed to improve. This project was intended to give us a live experience of being part of a development team, and I feel that the experience gained during this two weeks will be invaluable in my career.
 The website is still in its early stages and isn't fully available. I'll post code snippets from my work below instead.
 
 # Style SignIn Page
